@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Şifre Gücü Ölçme | Onur KUL</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bu araç ile şifrelerinizin gücünü ölçebilir ve güvenli olup olmadıklarını görebilirsiniz."
+    />
+    <meta name="author" content="Onur KUL" />
+    <meta name="publisher" content="Onur KUL" />
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="1 Days" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Onur KUL" />
+    <meta
+      property="og:image"
+      content="https://onurkul.com.tr/uploads/logo/logo_61fda0d03b48f0-92709354-65066295.png"
+    />
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="50" />
+    <meta property="og:type" content="website/" />
+    <meta property="og:title" content="Şifre Gücü Ölçme | Onur KUL" />
+    <meta
+      property="og:description"
+      content="Bu araç ile şifrelerinizin gücünü ölçebilir ve güvenli olup olmadıklarını görebilirsiniz."
+    />
+    <meta
+      property="og:url"
+      content="https://onurkul.com.tr/araclar/sifre-gucu-olcme/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="Onur KUL" />
+    <meta name="twitter:title" content="Şifre Gücü Ölçme | Onur KUL" />
+    <meta
+      name="twitter:description"
+      content="Bu araç ile şifrelerinizin gücünü ölçebilir ve güvenli olup olmadıklarını görebilirsiniz."
+    />
+    <meta
+      name="twitter:image"
+      content="https://onurkul.com.tr/uploads/logo/logo_61fda0d03b48f0-92709354-65066295.png"
+    />
+    <link
+      rel="canonical"
+      href="https://onurkul.com.tr/araclar/sifre-gucu-olcme/"
+    />
+    <link
+      rel="alternate"
+      href="https://onurkul.com.tr/araclar/sifre-gucu-olcme/"
+      hreflang="tr_TR"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://onurkul.com.tr/uploads/logo/favicon_62096e9aa3b474-30316417-17601085.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header><h1>Şifre Gücü Ölçme</h1></header>
+      <form action="#">
+        <div class="field">
+          <input
+            onkeyup="trigger()"
+            type="password"
+            placeholder="Lütfen Bir Şifre Girin"
+          />
+          <span class="showBtn">Göster</span>
+        </div>
+        <div class="indicator">
+          <span class="weak"></span>
+          <span class="medium"></span>
+          <span class="strong"></span>
+        </div>
+        <div class="text"></div>
+      </form>
+    </div>
+    <div class="wrapper2">
+      <div class="router">
+        <a class="icon" href="https://onurkul.com.tr/" target="_blank"
+          ><i class="fa-solid fa-house"></i
+        ></a>
+        <a class="icon-name" href="https://onurkul.com.tr/" target="_blank"
+          >Ana Sayfa</a
+        >
+      </div>
+      <div class="router">
+        <a
+          class="icon"
+          href="https://onurkul.com.tr/araclar/sifre-olusturucu"
+          target="_blank"
+          ><i class="fa-solid fa-lock"></i
+        ></a>
+        <a
+          class="icon-name"
+          href="https://onurkul.com.tr/araclar/sifre-olusturucu"
+          target="_blank"
+          >Şifre Oluşturucu</a
+        >
+      </div>
+      <div class="footer">
+        <a href="https://onurkul.com.tr/" target="_blank" class="onurkul"
+          >Telif Hakkı © 2023 Onur KUL - Tüm Hakları Saklıdır.</a
+        >
+      </div>
+    </div>
+    <script>
+      const indicator = document.querySelector(".indicator");
+      const input = document.querySelector("input");
+      const weak = document.querySelector(".weak");
+      const medium = document.querySelector(".medium");
+      const strong = document.querySelector(".strong");
+      const text = document.querySelector(".text");
+      const showBtn = document.querySelector(".showBtn");
+      let regExpWeak = /[a-z]/;
+      let regExpMedium = /\d+/;
+      let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+      function trigger() {
+        if (input.value != "") {
+          indicator.style.display = "block";
+          indicator.style.display = "flex";
+          if (
+            input.value.length <= 3 &&
+            (input.value.match(regExpWeak) ||
+              input.value.match(regExpMedium) ||
+              input.value.match(regExpStrong))
+          )
+            no = 1;
+          if (
+            input.value.length >= 6 &&
+            ((input.value.match(regExpWeak) &&
+              input.value.match(regExpMedium)) ||
+              (input.value.match(regExpMedium) &&
+                input.value.match(regExpStrong)) ||
+              (input.value.match(regExpWeak) &&
+                input.value.match(regExpStrong)))
+          )
+            no = 2;
+          if (
+            input.value.length >= 6 &&
+            input.value.match(regExpWeak) &&
+            input.value.match(regExpMedium) &&
+            input.value.match(regExpStrong)
+          )
+            no = 3;
+          if (no == 1) {
+            weak.classList.add("active");
+            text.style.display = "block";
+            text.textContent = "Şifreniz Çok Zayıf Güçte!";
+            text.classList.add("weak");
+          }
+          if (no == 2) {
+            medium.classList.add("active");
+            text.textContent = "Şifreniz Orta Güçte!";
+            text.classList.add("medium");
+          } else {
+            medium.classList.remove("active");
+            text.classList.remove("medium");
+          }
+          if (no == 3) {
+            weak.classList.add("active");
+            medium.classList.add("active");
+            strong.classList.add("active");
+            text.textContent = "Şifreniz Çok Güçlü!";
+            text.classList.add("strong");
+          } else {
+            strong.classList.remove("active");
+            text.classList.remove("strong");
+          }
+          showBtn.style.display = "block";
+          showBtn.onclick = function () {
+            if (input.type == "password") {
+              input.type = "text";
+              showBtn.textContent = "HIDE";
+              showBtn.style.color = "#23ad5c";
+            } else {
+              input.type = "password";
+              showBtn.textContent = "SHOW";
+              showBtn.style.color = "#000";
+            }
+          };
+        } else {
+          indicator.style.display = "none";
+          text.style.display = "none";
+          showBtn.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+html,
+body {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #e3f2fd;
+}
+.container {
+  background: #fff;
+  padding: 20px 30px;
+  width: 420px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  top: 0;
+  position: relative;
+}
+.container header {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33px;
+}
+h1 {
+  font-size: 30px;
+  padding: 5px;
+}
+.container form {
+  margin: 20px 5px 10px 5px;
+  position: relative;
+}
+.container form .field {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+form .field input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid lightgrey;
+  padding-left: 15px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 17px;
+  transition: all 0.3s;
+}
+form .field input:focus {
+  border-color: #27ae60;
+  box-shadow: inset 0 0 3px #2fd072;
+}
+form .field .showBtn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+}
+form .indicator {
+  height: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+}
+form .indicator span {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: lightgrey;
+  border-radius: 5px;
+}
+form .indicator span:nth-child(2) {
+  margin: 0 3px;
+}
+form .indicator span.active:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.indicator span.weak:before {
+  background-color: #ff4757;
+}
+.indicator span.medium:before {
+  background-color: orange;
+}
+.indicator span.strong:before {
+  background-color: #23ad5c;
+}
+form .text {
+  font-size: 20px;
+  font-weight: 500;
+  display: none;
+  padding: 10px;
+  margin-bottom: -10px;
+}
+form .text.weak {
+  color: #ff4757;
+}
+form .text.medium {
+  color: orange;
+}
+form .text.strong {
+  color: #23ad5c;
+}
+.wrapper2 {
+  background: #fff;
+  padding: 20px 30px;
+  width: 420px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  bottom: 160px;
+}
+.router {
+  display: block;
+  float: left;
+  margin-left: 55px;
+  margin-bottom: 20px;
+}
+.icon {
+  display: block;
+  color: #5372f0;
+  font-size: 30px;
+}
+.icon-name {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  bottom: 5px;
+}
+.footer {
+  display: block;
+  text-align: center;
+  float: left;
+}
+.onurkul {
+  text-decoration: none;
+  color: #000;
+  font-weight: 100;
+  font-size: 14.8px;
+}
+
+@media screen and (max-width: 760px) {
+  .router {
+    margin-left: 20px !important;
+    margin-top: 10px !important;
+  }
+  .icon {
+    display: block;
+    color: #5372f0;
+    font-size: 30px;
+  }
+  .icon-name {
+    position: relative;
+    bottom: 5px;
+    font-size: 15px;
+  }
+  .onurkul {
+    text-decoration: none;
+    color: #000;
+    font-weight: 100;
+    font-size: 13px;
+  }
+  .router-center {
+    position: relative;
+    left: 20px;
+  }
+  .router-center2 {
+    position: relative;
+    left: 35px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .container {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    min-height: 40%;
+  }
+  .wrapper2 {
+    width: 100%;
+    min-height: 30%;
+    position: relative;
+    bottom: 220px;
+  }
+  h1 {
+    font-size: 25px;
+    padding: 0px;
+  }
+  form .text {
+    font-size: 16px;
+    padding: 10px;
+  }
+  form .text.weak {
+    color: #ff4757;
+  }
+  form .text.medium {
+    color: orange;
+  }
+  form .text.strong {
+    color: #23ad5c;
+  }
+  .router {
+    margin-left: 55px !important;
+    margin-top: 10px !important;
+  }
+  .icon {
+    display: block;
+    color: #5372f0;
+    font-size: 40px;
+  }
+  .icon-name {
+    position: relative;
+    bottom: 5px;
+    font-size: 14px;
+  }
+  .onurkul {
+    position: relative;
+    top: 5px;
+    font-size: 14.5px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    min-height: 40%;
+  }
+  .wrapper2 {
+    width: 100%;
+    min-height: 30%;
+    position: relative;
+    bottom: 220px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  form .text {
+    font-size: 16px;
+    padding: 10px;
+  }
+  form .text.weak {
+    color: #ff4757;
+  }
+  form .text.medium {
+    color: orange;
+  }
+  form .text.strong {
+    color: #23ad5c;
+  }
+  .router {
+    margin-left: 50px !important;
+    margin-top: 10px !important;
+  }
+  .icon {
+    display: block;
+    color: #5372f0;
+    font-size: 40px;
+  }
+  .icon-name {
+    position: relative;
+    bottom: 5px;
+    font-size: 14px;
+  }
+  .onurkul {
+    position: relative;
+    top: 5px;
+    font-size: 13.5px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    position: relative;
+    top: 0;
+    width: 100%;
+    min-height: 60%;
+  }
+  .wrapper2 {
+    width: 100%;
+    min-height: 30%;
+    position: relative;
+    bottom: 120px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  form .text {
+    font-size: 16px;
+    padding: 10px;
+  }
+  form .text.weak {
+    color: #ff4757;
+  }
+  form .text.medium {
+    color: orange;
+  }
+  form .text.strong {
+    color: #23ad5c;
+  }
+  .router {
+    margin-left: 45px !important;
+    margin-top: 10px !important;
+  }
+  .icon {
+    display: block;
+    color: #5372f0;
+    font-size: 30px;
+  }
+  .icon-name {
+    position: relative;
+    bottom: 5px;
+    font-size: 14px;
+  }
+  .onurkul {
+    position: relative;
+    top: 5px;
+    font-size: 12.9px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    position: relative;
+    top: 0;
+    width: 100%;
+    min-height: 60%;
+  }
+  .wrapper2 {
+    width: 100%;
+    min-height: 30%;
+    position: relative;
+    bottom: 120px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  form .text {
+    font-size: 16px;
+    padding: 10px;
+  }
+  form .text.weak {
+    color: #ff4757;
+  }
+  form .text.medium {
+    color: orange;
+  }
+  form .text.strong {
+    color: #23ad5c;
+  }
+  .router {
+    margin-left: 40px !important;
+    margin-top: 10px !important;
+  }
+  .icon {
+    display: block;
+    color: #5372f0;
+    font-size: 30px;
+  }
+  .icon-name {
+    position: relative;
+    bottom: 5px;
+    font-size: 14px;
+  }
+  .onurkul {
+    position: relative;
+    top: 5px;
+    font-size: 12px;
+  }
+}
