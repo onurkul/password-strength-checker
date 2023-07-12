@@ -1,4 +1,4 @@
-# Şifre Gücü Ölçme
-Bu araç ile şifrelerinizin gücünü ölçebilir ve güvenli olup olmadıklarını görebilirsiniz.
+# Password Strength Checker
+With this tool you can measure the strength of your passwords and see if they are secure.
 
-Örnek: https://onurkul.com.tr/araclar/sifre-gucu-olcme/
+Example: https://onurkul.com.tr/araclar/sifre-gucu-olcme/
